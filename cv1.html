@@ -5,25 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./a.css">        <!-- 外部样式-->
 </head>
 <body>
-    <div class="topNavBar">
-        <img src="#" alt="logo">
+    <div class="topNavBar clearfix">    <!-- 导航加logo-->
+        <a class="logo" href="#" alt="logo">
+            <span class="rs">RS</span><span class="card">card</span>
+        </a>
         <nav>
-            <ul>
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">博客</a></li>
-                <li><a href="#">日历</a></li>
-                <li><a href="#">联系方式</a></li>
-                <li><a href="#">其他</a></li>
+            <ul class="clearfix">
+                <li>
+                    <a href="#">关于</a>
+                </li>
+                <li>
+                    <a href="#">技能</a>
+                </li>
+                <li>
+                    <a href="#">作品</a>
+                </li>
+                <li>
+                    <a href="#">博客</a>
+                </li>
+                <li>
+                    <a href="#">日历</a>
+                </li>
+                <li>
+                    <a href="#">联系方式</a>
+                </li>
+                <li>
+                    <a href="#">其他</a>
+                </li>
             </ul>
         </nav>
     </div>
     <div class="banner" style="background-image: url(...)"></div>
-    <main>
-        <div class="card">
+    <main>       <!-- 主体部分用main标签，能找到其他合适的标签就不要用div --> 
+        <div class="card">    <!-- card分为了上下，图片和文字又分为了左右 --> 
             <div class="pictureandtext">
                 <div class="picture">
                     <img src="#" alt="头像">
@@ -54,7 +71,7 @@
         <a class="button" href="#">下载PDF简历</a>
         <p>90后，射手座，老家绵阳，现居成都。</p>
     </main>
-    <section>
+    <section>       <!-- 下一个部分可以用section -->
         <h2>技能</h2>
         <ol>
             <li>HTML5 &amp; CSS3</li>
