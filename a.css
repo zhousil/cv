@@ -1,0 +1,59 @@
+body{
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+a{
+    color: inherit;    /*继承祖先的颜色，此处祖先为body*/
+    text-decoration: none;  /*去除下划线*/
+}
+.clearfix::after{           /*浮动后要在父元素上清除浮动*/
+    content: '';
+    display: block;
+    clear: both;
+}
+.topNavBar{
+    padding:21px 16px 21px 16px;
+}
+.topNavBar>nav{
+    float: right;
+    padding-top: 7px;
+    padding-bottom: 1px;
+}
+.topNavBar>nav>ul{       /*父子选择器*/
+    list-style:none;       /*清除小圆点*/
+    padding: 0;   /*消除ul自带的默认样式，以便后面设置样式 */
+    margin: 0;   /*消除ul自带的默认样式，以便后面设置样式 */
+}
+.topNavBar>nav>ul>li{
+    float: left;   /*使每个li横着展示*/
+    margin-left: 17px;  /*需要34像素的间距，则左右分别加17像素*/
+    margin-right: 17px;
+}
+.topNavBar>nav>ul>li>a{
+    font-size: 12px;
+    color:#B7B7B7;
+    font-weight: bold;
+    border-top: 3px solid transparent;       /*为了对称*/
+    border-bottom: 3px solid transparent;    /*为了不让文字抖动，提前设置一个透明的边框 */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;     /*<a>比<li>高，因此加上这个才能让li把a包起来*/
+}
+.topNavBar>nav>ul>li>a:hover{    /*要设置鼠标悬停的样式，就用:hover*/
+    border-bottom: 3px solid #E06567;
+}
+.topNavBar .logo{
+    font-size: 24px;
+    font-family: "Arial Black";
+    padding-top: 4px;  /*主要是要与导航栏对齐*/
+    padding-bottom: 2px;  /*主要是要与导航栏对齐*/
+    float: left;
+}
+.topNavBar .logo .rs{
+    margin-right: 4px;
+    color: #E6686A;
+}
+.topNavBar .logo .card{
+    color: #9A9DA2;
+}
