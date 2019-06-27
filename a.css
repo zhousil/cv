@@ -1,11 +1,19 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: #EFEFEF;
     margin: 0;
 }
 a{
     color: inherit;    /*继承祖先的颜色，此处祖先为body*/
     text-decoration: none;  /*去除下划线*/
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+hr{
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
 }
 .clearfix::after{           /*浮动后要在父元素上清除浮动*/
     content: '';
@@ -13,24 +21,29 @@ a{
     clear: both;
 }
 .topNavBar{
-    padding:21px 16px 21px 16px;
+    padding:21px 0px 21px 0px;
+    position: fixed;
+    width: 100%;
 }
-.topNavBar>nav{
+.topNavBar-inner{
+    padding: 0 16px;
+}
+.topNavBar nav{
     float: right;
     padding-top: 7px;
     padding-bottom: 1px;
 }
-.topNavBar>nav>ul{       /*父子选择器*/
+.topNavBar nav>ul{       /*父子选择器*/
     list-style:none;       /*清除小圆点*/
     padding: 0;   /*消除ul自带的默认样式，以便后面设置样式 */
     margin: 0;   /*消除ul自带的默认样式，以便后面设置样式 */
 }
-.topNavBar>nav>ul>li{
+.topNavBar nav>ul>li{
     float: left;   /*使每个li横着展示*/
     margin-left: 17px;  /*需要34像素的间距，则左右分别加17像素*/
     margin-right: 17px;
 }
-.topNavBar>nav>ul>li>a{
+.topNavBar nav>ul>li>a{
     font-size: 12px;
     color:#B7B7B7;
     font-weight: bold;
@@ -40,7 +53,7 @@ a{
     padding-bottom: 5px;
     display: block;     /*<a>比<li>高，因此加上这个才能让li把a包起来*/
 }
-.topNavBar>nav>ul>li>a:hover{    /*要设置鼠标悬停的样式，就用:hover*/
+.topNavBar nav>ul>li>a:hover{    /*要设置鼠标悬停的样式，就用:hover*/
     border-bottom: 3px solid #E06567;
 }
 .topNavBar .logo{
@@ -56,4 +69,86 @@ a{
 }
 .topNavBar .logo .card{
     color: #9A9DA2;
+}
+.banner{
+    background-image: url(./image/rs-cover.jpg);
+    height: 515px;
+    background-position: center center;
+    background-size: cover;
+}
+.banner .mask{
+    height: 515px;
+    background-color:rgba(0,0,0,0.8);
+}
+.userCard{
+    max-width: 940px;
+    /* padding: 50px 50px; */
+    background-color:white;
+    margin-left: auto; 
+    margin-right: auto;
+}
+.userCard .welcome{
+    background-color: #E6686A;
+    color:white;
+    line-height:21px;
+    padding: 5px 16px; 
+    display: inline-block;
+    position: relative;
+    margin-bottom: 27px;
+}
+.welcome .triangle{
+    width:0px;
+    border:10px solid transparent;
+    border-left-color:#E6686A;
+    border-top-width:0px ;
+    position: absolute;
+    left: 4px;
+    top: 100%;
+}
+.userCard .picture{
+    float: left;
+}
+.userCard .text{
+    float: left;
+    margin-left: 65px;
+    width: 470px;
+}
+.userCard .text hr{
+    margin: 20px 0;
+}
+.userCard .pictureandtext{
+    padding: 50px;
+}
+.userCard dl dt,.userCard dl dd{
+    float: left;
+    padding: 8px 0;
+}
+.userCard dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+.userCard dl dd{
+    width: 70%;
+    color: #9DA0AF;
+}
+.userCard .media{
+    background-color: #E6686A;
+    text-align: center;
+}
+.userCard .media a{
+    border-radius: 50%;
+    display: inline-block;
+    width: 38px;
+    line-height: 30px;
+    padding: 4px 0;
+    margin: 16px;
+}
+.userCard .media a:hover{
+    background-color: #CF5D5F;
+}
+.userCard .media svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    vertical-align: top;
 }
