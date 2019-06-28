@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color:#EFEFEF;
+    color: black;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.clearfix::after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.navbar{
+    padding:25px 16px;
+    position: fixed;
+    width: 100%;
+}
+.navbar nav{
+    float: right;
+    padding: 0 25px;
+}
+.navbar nav ul{
+    list-style: none;
+}
+.navbar nav ul li{
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding:5px 0;
+}
+.navbar nav ul li a{
+    font-size: 12px;
+    font-weight: bold;
+    color: #B7B7B7;
+    padding: 6px 0;
+}
+.navbar nav ul li a:hover{
+    border-bottom: 3px solid #E6686A;
+}
+.navbar .logo{
+    float: left;
+    font-family: "Arial Black";
+    font-size: 24px;
+}
+.navbar .logo .rs{
+    color: #E6686A;
+    margin-right: 13px;
+}
+.navbar .logo .card{
+    color: #9A9DA2;
+}
+.banner{
+    background-image: url(./image/rs-cover.jpg);
+    height: 515px;
+    background-position: center center;
+    background-size: cover;
+}
+.banner .mask{
+    height: 515px;
+    background-color:rgba(0,0,0,0.8);
+}
+.usercard{
+    max-width: 940px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.usercard .photoandtext{
+    padding: 55px;
+}
+.usercard .photoandtext .photo{
+    float: left;
+    margin-right: 60px;
+}
+.usercard .photoandtext .text{
+    float: left;
+    width: 470px;
+}
+.usercard .text .welcome{
+    display: inline-block;
+    background-color: #E6686A;
+    color: white;
+    padding: 4px 17px;
+    position: relative;
+    margin-bottom: 28px;
+}
+.usercard .text .welcome .triangle{
+    width:0px;
+    border:10px solid transparent;
+    border-left-color:#E6686A;
+    border-top-width:0px ;
+    position: absolute;
+    top: 100%;
+    left: 4px;
+}
+.usercard .text hr{
+    border: none;
+    height: 0;
+    border-top: 1px solid #DEDEDE;
+    margin: 24px 0;
+}
+.usercard .text dl dt,.usercard .text dl dt dd{
+    float: left;
+}
+.usercard .text dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+.usercard .text dl dd{
+    width: 70%;
+    color: #9DA0A7;
+    margin: 8px 0;
+}
+.usercard footer{
+    text-align: center;
+    background-color: #E6686A;
+    padding: 15px 0;
+}
+.usercard footer a{
+    margin:0 10px;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 5px;
+}
+.usercard footer a:hover{
+    background-color: #CF5D5F;
+}
+.usercard footer a svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    vertical-align: top;
+}
