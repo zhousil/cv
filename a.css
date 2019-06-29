@@ -10,6 +10,12 @@ a{
     margin: 0;
     padding: 0;
 }
+ol,ul{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
 hr{
     height: 0;
     border: none;
@@ -21,7 +27,7 @@ hr{
     clear: both;
 }
 .topNavBar{
-    padding:21px 0px 21px 0px;
+    padding:21px 0px;
     position: fixed;
     width: 100%;
 }
@@ -35,8 +41,6 @@ hr{
 }
 .topNavBar nav>ul{       /*父子选择器*/
     list-style:none;       /*清除小圆点*/
-    padding: 0;   /*消除ul自带的默认样式，以便后面设置样式 */
-    margin: 0;   /*消除ul自带的默认样式，以便后面设置样式 */
 }
 .topNavBar nav>ul>li{
     float: left;   /*使每个li横着展示*/
@@ -86,6 +90,8 @@ hr{
     background-color:white;
     margin-left: auto; 
     margin-right: auto;
+    margin-top: -340px;
+    box-shadow: 0px 5px 11px -5px rgba(138,135,138,0.6);
 }
 .userCard .welcome{
     background-color: #E6686A;
@@ -145,6 +151,7 @@ hr{
 }
 .userCard .media a:hover{
     background-color: #CF5D5F;
+    transition: background-color 0.2s;
 }
 .userCard .media svg{
     width: 30px;
@@ -152,3 +159,70 @@ hr{
     fill: white;
     vertical-align: top;
 }
+main .downloadcv{
+    border: 1px solid #CDCFD1;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3D4451;
+    padding:20px 50px;
+    display: inline-block;
+    margin: 35px 0;
+}
+main .downloadcv:hover{
+    box-shadow: 0px 5px 11px -3px rgba(138,135,138,0.6);
+    transition: box-shadow 0.2s;
+}
+main .downloadcvwrapper{
+    text-align: center;
+}
+main .selfintroduction{
+    max-width: 940px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 33px;
+}
+body .skills{
+    max-width: 940px;
+    margin: 0 auto;
+}
+body .skills h2{
+    font-size: 33px;
+    color: #3D4451;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+}
+body .skills h3{
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+body .skills ol{
+    background-color: #fff;
+    box-shadow: 0px 5px 11px -3px rgba(138,135,138,0.6);
+    padding: 43px 50px 10px;
+    margin-top: 30px;
+}
+body .skills ol li{
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+}
+body .skills ol li:nth-child(even){
+    float: right;
+}
+body .skills ol li .navigationbar{
+    height: 5px;
+    /* width: 400px; */
+    background-color: #FAE1E1;
+    border-radius: 3px;
+    margin: 4px 0 40px;
+}
+.skills ol li .navigationbar .navigation{
+    height: 100%;
+    width: 60%;
+    background-color: #E6686A;
+}
+
