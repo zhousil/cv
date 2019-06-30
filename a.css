@@ -185,9 +185,9 @@ main .selfintroduction{
 }
 body .skills{
     max-width: 940px;
-    margin: 0 auto;
+    margin: 60px auto;
 }
-body .skills h2{
+body .skills h2,body .portfolio h2{
     font-size: 33px;
     color: #3D4451;
     text-align: center;
@@ -225,4 +225,74 @@ body .skills ol li .navigationbar{
     width: 60%;
     background-color: #E6686A;
 }
-
+.portfolio{
+    margin-bottom: 200px;
+    text-align: center;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.portfolio nav{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+    text-align: center;
+}
+.portfolio nav ol{
+    display: inline-block; 
+    vertical-align: top;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+.portfolio ol li{
+    float: left;
+    margin-right: 40px;
+    cursor: pointer;
+}
+.portfolio ol li:last-child{
+    margin-right: 0;
+}
+.portfolio nav .bar{
+    height: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.portfolio nav .bar .bar-inner{
+    height: 100%;
+    background-color: #E6686A;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+.portfolio nav .bar.state1 .bar-inner{
+    margin-left: 0;
+    width: 50px;
+}
+.portfolio nav .bar.state2 .bar-inner{
+    margin-left: 52px;
+    width: 110px;
+}
+.portfolio nav .bar.state3 .bar-inner{
+    margin-left: 161px;
+    width: 74px;
+}
+.portfolio .works{
+    margin-top: 30px;
+    position: relative;
+    height: 597px;
+}
+.portfolio .works .big,.portfolio .works .small1,
+.portfolio .works .small2{
+    position: absolute;
+}
+.portfolio .works .big{
+    top: 0;
+    left: 0;
+}
+.portfolio .works .small1{
+    left: 645px;
+    top: 0;
+}
+.portfolio .works .small2{
+    left: 645px;
+    top: 313px;
+}
