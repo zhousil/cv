@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+main{
+    text-align: center;
+}
+main .wrapper{
+    display: inline-block;
+}
+kbd{
+    border: 1px solid red;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    text-transform: uppercase;  /* 让字母全自己变成大写 */
+}
+main .wrapper div:nth-child(2){
+    margin-left: 0.5em;
+}
+main .wrapper div:nth-child(3){
+    margin-left: 0.5em;
+}
