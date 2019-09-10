@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>左右移动</title>
+        <script src="js/jquery.js"></script>
+	</head>
+	<body>
+		
+		<style type="text/css">
+			#left,#right{
+				width:150px;
+				height:200px;
+				text-align: center;
+				position:absolute;	
+				top:100px;			
+			}
+			
+			#left{
+				left:200px;
+			}
+			
+			#right{
+				left:400px;
+			}
+			
+			#btn{
+				position: absolute;
+				top:50px;
+				left:250px
+			}
+		</style>
+		
+		<div id="btn">
+			<button>——></button>
+			<button>===></button>
+			<button><——</button>
+			<button><===</button>			
+		</div>
+		
+		<select id="left" size="10" multiple>
+			<option>苹果</option>
+			<option>香蕉</option>
+			<option>梨子</option>
+			<option>橘子</option>
+			<option>柿子</option>
+			<option>萝卜</option>
+			<option>番茄</option>
+		</select>
+		
+		<select id="right" size="10" multiple>
+		</select>
+		
+		<script type="text/javascript">
+			//点击——>把左边选中的选项添加到右边
+            $("#left option").click(function(){
+				 $("#left option").removeClass("active");
+				 $(this).addClass("active");
+			 })
+			 $("#btn button:first").click(function(){
+				 $("#left .active").appendTo("#right");
+			 })
+			//点击===>把左边全部的选项添加到右边
+            $("#btn button:eq(1)").click(function(){
+                $("#left option").appendTo("#right")
+            })
+			//点击<——把右边选中的选项添加到左边
+            $("#right").on("click","option",function(){
+                $("option").removeClass("active"); 
+                $(this).addClass("active");          
+            })
+            $("#btn button:eq(2)").click(function(){
+                $("#right .active").appendTo("#left");
+            })
+			//点击<===把右边全部的选项添加到左边
+			$("#btn button:last").click(function(){
+                $("#right option").appendTo("#left")
+            })
+
+            //双击左边或者右边的选项让它自动移动到另外一端
+            $("#left option").dblclick(function(){
+                $("#left option").removeClass("active");                
+                $(this).addClass("active");
+                $("#left .active").appendTo("#right");                
+            })
+			$("#right").on("dblclick","option",function(){
+                $("option").removeClass("active"); 
+                 $(this).addClass("active");
+                 $("#right .active").appendTo("#left");       
+ 			 });
+			
+		</script>
+		
+	</body>
+</html>
