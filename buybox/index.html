@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        img{
+            width: 40px;
+            height: 40px;
+        }
+        #tab{
+            border-collapse:collapse; 
+            width: 600px;
+            height: 255px;
+            background: rgb(214, 188, 188);
+            margin: auto;
+            text-align: center;
+        }
+        #tab,#tab tr,#tab td{
+            border: 1px solid black;
+        } 
+        #tab td:last-child{
+            width: 150px;
+        }
+        #tab td button{
+            width: 80px;
+            height: 20px;
+            line-height: 16px;
+            cursor: pointer;
+        }
+        #box{
+            width: 600px;
+            /* height: 200px; */
+            margin: auto;
+            text-align: center;
+            border: 1px solid black;
+            border-collapse:collapse; 
+            
+        }
+        #box tr{
+            height: 40px;
+            text-align: center;
+        }
+        #box tr td{
+            border: 1px solid #000;
+        }
+        #box tr td:first-child{
+            width: 146px;
+        }
+        #box tr td:nth-child(2){
+            width: 173px;
+        }
+        #box tr td:last-child{
+            width: 150px;
+        }
+        #box tr button{
+            width: 80px;
+            height: 20px;
+            line-height: 16px;            
+            cursor: pointer;  
+        }
+        #btn{
+            width: 200px;
+            height: 30px;
+            background: rgba(255, 153, 0, 0.658);
+            display: block;
+            margin: 20px auto;
+            border: 1px solid rgba(172, 107, 10, 0.925);
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+        <table id="tab">
+                <tr>
+                    <td>商品</td>
+                    <td>名称</td>
+                    <td>价格</td>
+                    <td>添加购物车</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/apple.jpg">
+                    </td>
+                    <td>苹果</td>
+                    <td>12.8</td>
+                    <td>
+                        <button>添加</button>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/banana.jpg">
+                    </td>
+                    <td>香蕉</td>
+                    <td>3.29</td>
+                    <td>
+                        <button>添加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/liulian.jpg" alt="">
+                    </td>
+                    <td>榴莲</td>
+                    <td>50.2</td>
+                    <td>
+                        <button>添加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/old.jpg" alt="">
+                    </td>
+                    <td>刘奶奶</td>
+                    <td>999</td>
+                    <td>
+                        <button>添加</button>
+                    </td>
+                </tr>
+        </table>
+        <table id="box">
+        </table>
+            <button id="btn">结算</button>
+            <script>
+            // 分析：
+            //     1.勾选后点击添加，则进入到下面的盒子中；
+            //     2.进入盒子后，最后一列的按钮变成“删除”，点击删除键跳出确认框是否删除；
+            //     最后点击结算时，将盒子里的价格相加并计算出结果，盒子清空；
+            let a=0;            
+            $("#tab td button").click(function(){
+                let newTr = $("<tr></tr>");
+                $("#box").append(newTr);
+                let index = $(this).index("button");
+                let list = $("#tab tr").eq(index+1).html();
+                $("#box tr").eq(a).append(list);
+                a++;    
+                $("#box tr td button").html("删除")   
+            })
+
+            // 删除
+            $("#box").on("click","tr",function(){
+                    $(this).remove();  
+                    a=a-1;  //为什么不增加这一句的话，删除购物车元素后再增加会生成tr但内容为空，增加了这一句则正常
+            })
+            // 结算
+            $("#btn").click(function(){
+                let allPrice=0
+                $("#box tr").each(function(){  
+                    let price = parseFloat($(this).children().next().next().html());  
+                        allPrice+=price;    
+                })
+                alert("商品总价为：￥"+allPrice);         
+            })
+            </script>
+</body>
+</html>
